@@ -2,7 +2,7 @@ export const profile = {
   name: "Belal Fawzy",
   title: "Full-Stack Developer | Competitive Programmer | Problem Solver",
   tagline: "Building scalable web apps & solving real-world problems with clean, efficient code.",
-  profileImage: "/assets/images/profile.jpg", // placeholder — Belal will replace with his photo
+  profileImage: "/src/assets/images/Me.jpeg",
   resumeUrl: "https://drive.google.com/file/d/10hdeg_deHvJycImHSoajhti2MGaeo0Lt/view",
   email: "",
   location: "Cairo, Egypt",
@@ -24,8 +24,8 @@ export const about = {
 
 export const skills = {
   frontend: ["React", "Next.js", "JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
-  backend: ["Node.js", "Express.js", "ASP.NET Core MVC", "ASP.NET Web API"],
-  databases: ["MongoDB", "MySQL", "SQL Server", "Entity Framework Core"],
+  backend: ["ASP.NET Core", "ASP.NET MVC", "C#", "Entity Framework Core", "Node.js", "Express.js"],
+  databases: ["SQL Server", "MySQL", "Entity Framework Core", "MongoDB"],
   programming: ["C++", "C#", "Java", "Python"],
   tools: ["Git", "GitHub", "Docker", "VS Code", "Visual Studio", "Postman"],
   competitive: ["Codeforces (BELAL_FAWZY_)", "HackerRank"]
@@ -38,8 +38,8 @@ export const projects = [
     description: "Swift-Cart is a fast and modern e-commerce frontend built with Next.js and TypeScript. Provides a smooth shopping experience with responsive design, clean UI, and ready for backend API integration.",
     tech: ["Next.js 14", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/belalfawzy/swift-cart-app",
-    demoUrl: "https://swift-cart-app.vercel.app",
-    image: "/assets/images/projects/swiftcart.png",
+    demoUrl: "https://swiftcartapp.vercel.app/",
+    image: "/src/assets/images/SwiftCartApp.png",
     notes: "E-commerce ready structure (products, cart, checkout). Component-based architecture for reusability."
   },
   {
@@ -49,17 +49,17 @@ export const projects = [
     tech: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server"],
     githubUrl: "https://github.com/belalfawzy/FGI_CRM",
     demoUrl: "",
-    image: "/assets/images/projects/fgi_crm.png",
+    image: "/src/assets/images/FGI_CRM.png",
     notes: "Enterprise-style CRM features: leads, users with roles, simple reporting. To test the site use these logins:\n- Email: admin@admin.fgi | Password: 123456\n- Email: marketing@marketing.fgi | Password: 123456\n- Email: sales@sales.fgi | Password: 123456"
   },
   {
-    id: "tachxpress",
-    title: "TachXpress E-Commerce",
+    id: "techxpress",
+    title: "TechXpress E-Commerce",
     description: "E-commerce web app built with ASP.NET MVC. Includes product catalog, cart & checkout flow, authentication, and admin inventory panel.",
-    tech: ["ASP.NET MVC", "SQL Server"],
+    tech: ["ASP.NET MVC", "Entity Framework Core", "SQL Server"],
     githubUrl: "https://github.com/belalfawzy/TachXpress-E-Commerce-",
-    demoUrl: "",
-    image: "/assets/images/projects/tachxpress.png",
+    demoUrl: "http://techxcommerce.runasp.net/",
+    image: "/src/assets/images/TechXpress.png",
     notes: "Classic ASP.NET MVC project showcasing e-commerce workflows."
   },
   {
@@ -69,7 +69,7 @@ export const projects = [
     tech: ["ASP.NET MVC", "Entity Framework", "SQL Server"],
     githubUrl: "https://github.com/belalfawzy/Marketteto-MvcProject",
     demoUrl: "",
-    image: "/assets/images/projects/marketteto.png",
+    image: "/src/assets/images/Marketteto.png",
     notes: "Classic MVC architecture; good demonstration of server-rendered ASP.NET workflows."
   },
   {
@@ -79,7 +79,7 @@ export const projects = [
     tech: ["Java", "OOP", "Inventory Management"],
     githubUrl: "https://github.com/belalfawzy/QuantumBookstore",
     demoUrl: "",
-    image: "/assets/images/projects/quantum_bookstore.png",
+    image: "/src/assets/images/QuantumBookstore.png",
     notes: "Java OOP design showcasing extensibility and exception handling. Educational project.",
     isEducational: true
   },
@@ -90,7 +90,7 @@ export const projects = [
     tech: ["C#", "OOP", "Algorithms"],
     githubUrl: "https://github.com/belalfawzy/DataStructures",
     demoUrl: "",
-    image: "/assets/images/projects/datastructures.png",
+    image: "/src/assets/images/DataStructures.png",
     notes: "Problem-solving focused; intended as learning & reference. Educational project.",
     isEducational: true
   }
@@ -113,7 +113,8 @@ export const certificates = [
     issuer: "Digital Egypt Pioneers Initiative (DEPI)",
     issued: "Oct 2024",
     expired: "May 2025",
-    link: ""
+    image: "/src/assets/images/FullStackCertificate.png",
+    link: "https://drive.google.com/file/d/1BCzmBnZDpxHBaJNwAzfQngbILoMf3GgF/view?usp=drive_link"
   },
   {
     id: "depi_business_english",
@@ -121,40 +122,51 @@ export const certificates = [
     issuer: "Digital Egypt Pioneers Initiative (DEPI)",
     issued: "Jan 2025",
     expired: "Mar 2025",
-    link: ""
+    image: "/src/assets/images/BusinessEnglishTrackCertificate.png",
+    link: "https://drive.google.com/file/d/1S7TGWm1WlBVuMViE_vvcRUeKwISm-fiJ/view?usp=drive_link"
   },
   {
     id: "hackerrank_java",
     title: "Certificate of Accomplishment — Java (Basic)",
     issuer: "HackerRank",
     credentialId: "DF8D777D7814",
-    link: "https://www.hackerrank.com/certificates/DF8D777D7814"
+    issued: "Dec 2024",
+    image: "/src/assets/images/Java.png",
+    link: "https://www.hackerrank.com/certificates/iframe/df8d777d7814"
   },
   {
     id: "hackerrank_sql",
-    title: "HackerRank Certificate of Accomplishment — SQL (Basic)",
+    title: "Certificate of Accomplishment — SQL (Basic)",
     issuer: "HackerRank",
     credentialId: "95360629E5C7",
-    link: "https://www.hackerrank.com/certificates/95360629E5C7"
+    issued: "Dec 2024",
+    image: "/src/assets/images/sql.png",
+    link: "https://www.hackerrank.com/certificates/iframe/95360629e5c7"
   },
   {
     id: "hackerrank_csharp",
-    title: "HackerRank Certificate of Accomplishment — C# (Basic)",
+    title: "Certificate of Accomplishment — C# (Basic)",
     issuer: "HackerRank",
-    credentialId: "22FO8225A639",
-    link: "https://www.hackerrank.com/certificates/22FO8225A639"
+    credentialId: "22F08225A639",
+    issued: "Dec 2024",
+    image: "/src/assets/images/CSharp.png",
+    link: "https://www.hackerrank.com/certificates/iframe/22f08225a639"
   },
   {
     id: "nvidia_deep_learning",
     title: "Introduction to Deep Learning",
     issuer: "NVIDIA",
-    link: ""
+    issued: "Sep 2025",
+    image: "/src/assets/images/NvidiaCertificate.png",
+    link: "https://learn.nvidia.com/certificates?id=ZZFUbKPNRcWvLGX1B_RQuQ"
   },
   {
-    id: "nti_completion",
-    title: "Completion Certificate",
-    issuer: "National Telecommunication Institute (NTI)",
-    link: ""
+    id: "huawei_ai_overview",
+    title: "Overview of AI",
+    issuer: "Huawei",
+    issued: "Sep 2025",
+    image: "/src/assets/images/HuaweiCertificate.png",
+    link: "https://drive.google.com/file/d/1QVRXrBi6KtzuxnxCH7naMJ7ug5YA7AF-/view?usp=drive_link"
   }
 ];
 

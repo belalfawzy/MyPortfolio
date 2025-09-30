@@ -66,9 +66,17 @@ const Certificates = () => {
             >
               {/* Certificate Image */}
               <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white">
-                  <Award className="w-16 h-16" />
-                </div>
+                {certificate.image ? (
+                  <img 
+                    src={certificate.image} 
+                    alt={certificate.title}
+                    className="w-full h-64 object-contain bg-gray-100 dark:bg-gray-700"
+                  />
+                ) : (
+                  <div className="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white">
+                    <Award className="w-16 h-16" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Eye className="w-8 h-8 text-white" />
@@ -204,9 +212,19 @@ const Certificates = () => {
 
                 <div className="space-y-6">
                   {/* Certificate Image */}
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white">
-                    <Award className="w-20 h-20" />
-                  </div>
+                  {selectedCertificate.image ? (
+                    <div className="w-full rounded-xl overflow-hidden">
+                      <img 
+                        src={selectedCertificate.image} 
+                        alt={selectedCertificate.title}
+                        className="w-full h-auto object-contain bg-gray-100 dark:bg-gray-700"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white">
+                      <Award className="w-20 h-20" />
+                    </div>
+                  )}
 
                   {/* Details */}
                   <div className="grid md:grid-cols-2 gap-6">

@@ -57,16 +57,7 @@ const Navbar = () => {
         }`}
       >
         <div className="container-custom">
-          <div className="flex items-center justify-between h-16 px-4">
-            {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold gradient-text cursor-pointer"
-              onClick={() => scrollToTop()}
-            >
-              Belal Fawzy
-            </motion.div>
-
+          <div className="flex items-center justify-center h-16 px-4">
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
@@ -99,21 +90,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center space-x-2">
-              <motion.button
-                onClick={toggleTheme}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
-                aria-label="Toggle theme"
-              >
-                {theme === 'light' ? (
-                  <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                ) : (
-                  <Sun className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-                )}
-              </motion.button>
-              
+            <div className="lg:hidden flex items-center justify-center">
               <motion.button
                 onClick={() => setIsOpen(!isOpen)}
                 whileHover={{ scale: 1.05 }}
@@ -152,6 +129,26 @@ const Navbar = () => {
                       {item.name}
                     </motion.button>
                   ))}
+                  
+                  {/* Theme Toggle in Mobile Menu */}
+                  <motion.button
+                    onClick={toggleTheme}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center w-full px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-300 font-medium"
+                  >
+                    {theme === 'light' ? (
+                      <>
+                        <Moon className="w-5 h-5 mr-2" />
+                        Dark Mode
+                      </>
+                    ) : (
+                      <>
+                        <Sun className="w-5 h-5 mr-2" />
+                        Light Mode
+                      </>
+                    )}
+                  </motion.button>
                 </div>
               </motion.div>
             )}

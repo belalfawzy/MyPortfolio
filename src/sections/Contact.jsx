@@ -28,17 +28,39 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`)
+      const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+Sent from your portfolio website
+      `)
+      
+      // Open user's email client with pre-filled message
+      const mailtoLink = `mailto:belalfawzy123@gmail.com?subject=${subject}&body=${body}`
+      window.open(mailtoLink, '_blank')
+      
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      }, 3000)
+      
+    } catch (error) {
+      console.error('Error opening email client:', error)
+      setIsSubmitting(false)
+      alert('Please contact me directly at belalfawzy123@gmail.com')
+    }
   }
 
   const contactInfo = [
@@ -53,8 +75,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+20 123 456 7890',
-      href: 'tel:+201234567890',
+      value: '+20 112 425 9475',
+      href: 'tel:+201124259475',
       color: 'text-green-500',
       bgColor: 'bg-green-100 dark:bg-green-900/20'
     },
@@ -223,10 +245,11 @@ const Contact = () => {
               >
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Message Sent Successfully!
+                  Email Client Opened!
                 </h4>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Thank you for reaching out. I'll get back to you soon.
+                  Your email client should have opened with a pre-filled message. 
+                  Please send the email to complete the contact process.
                 </p>
               </motion.div>
             ) : (

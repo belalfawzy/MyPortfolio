@@ -112,7 +112,7 @@ const Projects = () => {
                     e.target.nextSibling.style.display = 'flex'
                   }}
                 />
-                <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-4xl font-bold hidden">
+                <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-purple-500 items-center justify-center text-white text-4xl font-bold hidden">
                   {project.title.charAt(0)}
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
@@ -272,9 +272,19 @@ const Projects = () => {
 
                 <div className="space-y-6">
                   {/* Project Image */}
-                  <div className="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white text-6xl font-bold">
-                    {selectedProject.title.charAt(0)}
-                  </div>
+                  {selectedProject.image ? (
+                    <div className="w-full rounded-xl overflow-hidden">
+                      <img 
+                        src={selectedProject.image} 
+                        alt={selectedProject.title}
+                        className="w-full h-auto object-contain bg-gray-100 dark:bg-gray-700"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-64 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center text-white text-6xl font-bold">
+                      {selectedProject.title.charAt(0)}
+                    </div>
+                  )}
 
                   {/* Description */}
                   <div>

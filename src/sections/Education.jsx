@@ -30,8 +30,6 @@ const Education = () => {
 
         {/* Education Timeline */}
         <div className="relative mb-16">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
           
           <div className="space-y-12">
             {education.map((edu, index) => (
